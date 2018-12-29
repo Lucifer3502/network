@@ -115,7 +115,7 @@ int32_t NETWORK_API(network_write)(network_t *network, int32_t fd,
 
 int32_t NETWORK_API(network_close)(network_t *network, uint32_t fd);
 
-uint32_t NETWORK_API(network_thread)(network_t *network);
+int32_t NETWORK_API(network_thread)(network_t *network);
 
 int32_t NETWORK_API(network_init)(network_t *network);
 

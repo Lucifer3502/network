@@ -555,7 +555,7 @@ net_udp_init(net_udp_iface_t *iface)
     return 0;
 }
 
-uint32_t NETWORK_API_ATTR
+int32_t NETWORK_API_ATTR
 NETWORK_API(network_thread)(network_t *network)
 {
     int32_t ret = 0;
