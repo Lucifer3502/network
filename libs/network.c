@@ -1,7 +1,7 @@
 /*
  * network.c
  *
- *  Created on: 2018Äê7ÔÂ6ÈÕ
+ *  Created on: 2018ï¿½ï¿½7ï¿½ï¿½6ï¿½ï¿½
  *      Author: heyan
  */
 
@@ -13,6 +13,10 @@
 #endif
 #include "network.h"
 
+#if defined(__cplusplus)  /* If this is a C++ compiler, use C linkage */
+extern "C"
+{
+#endif
 
 int32_t NETWORK_API_ATTR
 NETWORK_API(network_read)(network_t *network, int32_t fd, 
@@ -232,7 +236,7 @@ NETWORK_API(network_write)(network_t *network, int32_t fd,
 }
 
 int32_t NETWORK_API_ATTR
-NETWORK_API(network_close)(network_t *network, uint32_t fd)
+NETWORK_API(network_close)(network_t *network, int32_t fd)
 {
     int32_t ret = 0;
     
@@ -612,4 +616,6 @@ NETWORK_API(network_init)(network_t *network)
     return ret;
 }
 
-
+#if defined(__cplusplus)  /* If this is a C++ compiler, use C linkage */
+}
+#endif

@@ -1,7 +1,7 @@
 /*
  * network.h
  *
- *  Created on: 2018Äê7ÔÂ6ÈÕ
+ *  Created on: 2018ï¿½ï¿½7ï¿½ï¿½6ï¿½ï¿½
  *      Author: heyan
  */
 
@@ -11,6 +11,10 @@
 #include "stdint.h"
 #include "common.h"
 
+#if defined(__cplusplus)  /* If this is a C++ compiler, use C linkage */
+extern "C"
+{
+#endif
 
 #define NETWORK_API(func_name)   hy_##func_name
 #define NETWORK_API_ATTR  
@@ -113,11 +117,14 @@ int32_t NETWORK_API(network_read)(network_t *network, int32_t fd,
 int32_t NETWORK_API(network_write)(network_t *network, int32_t fd,
                     uint8_t *buf, uint32_t len, uint32_t tout_ms);
 
-int32_t NETWORK_API(network_close)(network_t *network, uint32_t fd);
+int32_t NETWORK_API(network_close)(network_t *network, int32_t fd);
 
 int32_t NETWORK_API(network_thread)(network_t *network);
 
 int32_t NETWORK_API(network_init)(network_t *network);
 
+#if defined(__cplusplus)  /* If this is a C++ compiler, use C linkage */
+}
+#endif
 
 #endif /* INCLUDE_NETWORK_H_ */
