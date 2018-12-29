@@ -11,6 +11,10 @@
 #include "stdint.h"
 #include "common.h"
 
+#if defined(__cplusplus)  /* If this is a C++ compiler, use C linkage */
+extern "C"
+{
+#endif
 
 #define NETWORK_API(func_name)   hy_##func_name
 #define NETWORK_API_ATTR  
@@ -119,5 +123,8 @@ int32_t NETWORK_API(network_thread)(network_t *network);
 
 int32_t NETWORK_API(network_init)(network_t *network);
 
+#if defined(__cplusplus)  /* If this is a C++ compiler, use C linkage */
+}
+#endif
 
 #endif /* INCLUDE_NETWORK_H_ */
