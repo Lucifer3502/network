@@ -9,6 +9,7 @@
   我们以linux系统为例，介绍一下使用和测试方法。
 
 	sudo apt-get install cmake
+	cd network
 	mkdir build 
 	cd build
 	cmake ..
