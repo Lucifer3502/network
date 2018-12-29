@@ -327,7 +327,7 @@ NETWORK_API(network_close)(network_t *network, uint32_t fd)
 }
 
 static int32_t net_tcp_client_init(net_tcp_client_iface_t *iface);
-static uint32_t NETWORK_API_ATTR
+static int32_t NETWORK_API_ATTR
 net_tcp_client_thread(network_t *network)
 {
     net_tcp_client_iface_t *iface = network->network_iface;
