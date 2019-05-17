@@ -68,7 +68,7 @@ NETWORK_API(network_read)(network_t *network, int32_t fd,
             net_tcp_server_iface_t *iface = (net_tcp_server_iface_t *)network->network_iface;
             uint32_t i;
             for(i = 0; i < iface->cli_num; i++) {
-                if(fd != iface->cfd[i]) {
+                if(fd == iface->cfd[i]) {
                     break;
                 }
             }
